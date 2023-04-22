@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33513.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charisma.Framework.Domain", "Charisma.Framework.Domain\Charisma.Framework.Domain.csproj", "{5A3EEF60-A909-497E-906D-391E71291BE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0F990FE2-F631-4F9C-9C13-9CBFF22952B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{537A8D85-9100-477E-9D80-8A80CA7CCA9C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Charisma.Framework.Base", "Charisma.Framework.Base\Charisma.Framework.Base.csproj", "{91AA0A37-563B-4673-9C6F-6A38A6EB6731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charisma.Framework.Application", "..\Charisma.Framework.Application\Charisma.Framework.Application.csproj", "{79CD7251-D43E-4BBE-8D4E-B70BB5FD8E43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charisma.Framework.Application.Configurations", "..\Charisma.Framework.Application.Configurations\Charisma.Framework.Application.Configurations.csproj", "{AAAC4CA1-895B-4B39-B999-BCDD94050105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Charisma.Framework.Domain.Configurations", "..\Charisma.Framework.Domain.Configurations\Charisma.Framework.Domain.Configurations.csproj", "{20C8700A-D2D3-400C-A101-609C37E3FB21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A3EEF60-A909-497E-906D-391E71291BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3EEF60-A909-497E-906D-391E71291BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3EEF60-A909-497E-906D-391E71291BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3EEF60-A909-497E-906D-391E71291BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AA0A37-563B-4673-9C6F-6A38A6EB6731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AA0A37-563B-4673-9C6F-6A38A6EB6731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AA0A37-563B-4673-9C6F-6A38A6EB6731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AA0A37-563B-4673-9C6F-6A38A6EB6731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79CD7251-D43E-4BBE-8D4E-B70BB5FD8E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79CD7251-D43E-4BBE-8D4E-B70BB5FD8E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79CD7251-D43E-4BBE-8D4E-B70BB5FD8E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79CD7251-D43E-4BBE-8D4E-B70BB5FD8E43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAC4CA1-895B-4B39-B999-BCDD94050105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAC4CA1-895B-4B39-B999-BCDD94050105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAC4CA1-895B-4B39-B999-BCDD94050105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAC4CA1-895B-4B39-B999-BCDD94050105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C8700A-D2D3-400C-A101-609C37E3FB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C8700A-D2D3-400C-A101-609C37E3FB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C8700A-D2D3-400C-A101-609C37E3FB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C8700A-D2D3-400C-A101-609C37E3FB21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A3EEF60-A909-497E-906D-391E71291BE7} = {537A8D85-9100-477E-9D80-8A80CA7CCA9C}
+		{537A8D85-9100-477E-9D80-8A80CA7CCA9C} = {0F990FE2-F631-4F9C-9C13-9CBFF22952B2}
+		{91AA0A37-563B-4673-9C6F-6A38A6EB6731} = {537A8D85-9100-477E-9D80-8A80CA7CCA9C}
+		{79CD7251-D43E-4BBE-8D4E-B70BB5FD8E43} = {537A8D85-9100-477E-9D80-8A80CA7CCA9C}
+		{AAAC4CA1-895B-4B39-B999-BCDD94050105} = {537A8D85-9100-477E-9D80-8A80CA7CCA9C}
+		{20C8700A-D2D3-400C-A101-609C37E3FB21} = {537A8D85-9100-477E-9D80-8A80CA7CCA9C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D97DF495-0D40-4D42-B4C9-B6AD1202B65D}
+	EndGlobalSection
+EndGlobal
