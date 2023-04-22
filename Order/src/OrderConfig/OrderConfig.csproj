@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Charisma.Infrastructure.Persistence.SQLEF\Charisma.Infrastructure.Persistence.SQLEF.csproj" />
+    <ProjectReference Include="..\Charisma.Order.Application\Charisma.Order.Application.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\src\Charisma.Framework.Application\Charisma.Framework.Application.csproj" />
+    <ProjectReference Include="..\Charisma.Order.Domain\Charisma.Order.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
