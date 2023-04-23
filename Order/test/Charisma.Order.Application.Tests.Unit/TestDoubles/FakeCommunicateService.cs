@@ -26,3 +26,12 @@ public class FakeCommunicateService : ICommunicateService<GetProductPriceRespons
 		return await Task.FromResult(new GetProductPriceResponse(request.ProductCode, price));
 	}
 }
+
+
+public class FakeSubmissionCommunicateService : ICommunicateService<ProductSubmissionRequest>
+{
+	public async Task GetData(ProductSubmissionRequest request)
+	{
+		await Task.CompletedTask;
+	}
+}

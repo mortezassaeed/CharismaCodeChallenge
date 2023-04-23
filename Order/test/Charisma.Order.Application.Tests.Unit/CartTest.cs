@@ -18,7 +18,7 @@ public class CartTest
 	private IClock outOfTime = new ClockStubOutOfTime();
 	private IProductRepository productRepo = new ProductRepositoryStub();
 	private ICommunicateService<GetProductPriceResponse, GetProductPriceRequest> igRPCService = new FakeCommunicateService();
-
+	private readonly ICommunicateService<ProductSubmissionRequest> _submissionService = new FakeSubmissionCommunicateService();
 
 	[Fact]
 	public async Task Cart_should_create_with_valid_data()
@@ -27,7 +27,7 @@ public class CartTest
 			FakeCustomer.ValidCustomer,
 				new List<int> { 1 });
 
-		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo);
+		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo, _submissionService);
 		await handler.HandleAsync(cartCommand);
 
 		await cartRepo.Received().CreateAsync(Arg.Any<Cart>());
@@ -38,7 +38,7 @@ public class CartTest
 	{
 		var cartCommand = new Contract.Commands.AddCartCommand(FakeCustomer.ValidCustomer, new List<int> { 1 });
 
-		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, outOfTime, igRPCService, productRepo);
+		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, outOfTime, igRPCService, productRepo, _submissionService);
 		var handlerDelegate = async () => await handler.HandleAsync(cartCommand);
 
 		await handlerDelegate.Should().ThrowAsync<CartOutOfPossibleTime>();
@@ -49,7 +49,7 @@ public class CartTest
 	{
 		var cartCommand = new Contract.Commands.AddCartCommand(FakeCustomer.InValidCustomer, new List<int> { 1 });
 
-		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo);
+		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo, _submissionService);
 		var handlerDelegate = async () => await handler.HandleAsync(cartCommand);
 
 		await handlerDelegate.Should().ThrowAsync<CartCustomerIsRequired>();
@@ -62,7 +62,7 @@ public class CartTest
 	{
 		var cartCommand = new Contract.Commands.AddCartCommand(FakeCustomer.ValidCustomer, items?.ToList());
 
-		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo);
+		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo, _submissionService);
 		var handlerDelegate = async () => await handler.HandleAsync(cartCommand);
 
 		await handlerDelegate.Should().ThrowAsync<CartItemIsEmptyException>();
@@ -73,7 +73,7 @@ public class CartTest
 	{
 		var cartCommand = new Contract.Commands.AddCartCommand(FakeCustomer.ValidCustomer, new List<int> { 1, 2 });
 
-		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo);
+		AddCartCommandHandler handler = new AddCartCommandHandler(cartRepo, inTime, igRPCService, productRepo, _submissionService);
 		var handlerDelegate = async () => await handler.HandleAsync(cartCommand);
 
 		await handlerDelegate.Should().ThrowAsync<SumOfProductPriceIsLessThanAllowed>();
