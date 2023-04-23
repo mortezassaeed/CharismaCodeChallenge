@@ -30,7 +30,7 @@ public class FilterBuilder : IFilterBuilder, IOperationFilterBuilder
 
 	public IConditionFilterBuilder ApplyPercentDiscount(decimal percentAmountOfDiscount)
 	{
-		return AddFilter(new FixAmountDiscount(percentAmountOfDiscount, _actualPrice.Value));
+		return AddFilter(new PercentDiscount(percentAmountOfDiscount, _actualPrice.Value));
 	}
 
 	public IConditionFilterBuilder ThrowError(string message)
@@ -74,7 +74,7 @@ public class FilterBuilder : IFilterBuilder, IOperationFilterBuilder
 		_filters.Aggregate((a, b) =>
 		{
 			a.SetNextFilter(b);
-			return a;
+			return b;
 		});
 
 		return _filters.First();

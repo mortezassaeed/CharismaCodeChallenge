@@ -1,7 +1,12 @@
-﻿namespace Charisma.Framework.Application.Configurations.Communicate
+﻿namespace Charisma.Framework.Application.Configurations.Communicate;
+
+public interface ICommunicateService<TResponse, TRequest>
 {
-	public interface ICommunicateService<TResponse, TRequest>
-	{
-		Task<TResponse> GetData(TRequest request);
-	}
+	Task<TResponse> GetData(TRequest request);
+}
+
+
+public interface ICommunicateService<TRequest>
+{
+	Task GetData(TRequest request);
 }

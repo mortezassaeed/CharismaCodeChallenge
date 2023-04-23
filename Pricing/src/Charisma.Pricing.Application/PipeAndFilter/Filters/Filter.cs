@@ -18,12 +18,12 @@ internal class Filter : IFilter
 		_next = EndFilter.Instance;
 	}
 
-	public Price Apply(int customerId, Price actualPrice, Price price)
+	public Price Apply(int customerId, Price actualPrice, Price finalPrice)
 	{
 		if (_condition.IsSatisfiedBy(customerId, actualPrice))
-			price = _operation.Apply(price);
+			finalPrice = _operation.Apply(finalPrice);
 
-		return _next.Apply(customerId, actualPrice, price);
+		return _next.Apply(customerId, actualPrice, finalPrice);
 	}
 
 	public void SetNextFilter(IFilter filter)

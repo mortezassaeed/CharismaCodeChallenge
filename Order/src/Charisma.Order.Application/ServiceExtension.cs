@@ -22,6 +22,7 @@ public static class ServiceExtension
 					.WithSingletonLifetime());
 
 		services.AddSingleton<ICartItemQueryService, CartQueryService>();
-		services.AddSingleton(typeof(ICommunicateService<GetProductPriceResponse, GetProductPriceRequest>), typeof(CommunicateService));
+		services.AddSingleton(typeof(ICommunicateService<GetProductPriceResponse, GetProductPriceRequest>), typeof(PricingCommunicateService));
+		services.AddSingleton(typeof(ICommunicateService<ProductSubmissionRequest>), typeof(SubmissionCommunicateService));
 	}
 }

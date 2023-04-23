@@ -8,7 +8,7 @@ using Charisma.Pricing.Domain.ProductAggregate;
 
 namespace Charisma.Pricing.Application.CommandHandler;
 
-internal class CalculatePriceService : ICalculatePriceService
+public class CalculatePriceService : ICalculatePriceService
 {
 	private readonly IProductRepository _productRepository;
 	private readonly IProductPricingRepository _productPricingRepository;
@@ -27,8 +27,8 @@ internal class CalculatePriceService : ICalculatePriceService
 		var finalPrice = new Price(product.BasePrice.Value);
 
 		var filter = new FilterBuilder(customerId, product.BasePrice)
-			.AnyOrder().ApplyFixAddedProfit(1000)
-			.WhenProductActualPriceMoreThan(2000).ApplyPercentDiscount(1)
+			.AnyOrder().ApplyFixAddedProfit(1_000)
+			.WhenProductActualPriceMoreThan(15_000).ApplyPercentDiscount(1)
 			.WhenSpecialCustomer().ApplyFixAmountDiscount(100)
 			.Build();
 

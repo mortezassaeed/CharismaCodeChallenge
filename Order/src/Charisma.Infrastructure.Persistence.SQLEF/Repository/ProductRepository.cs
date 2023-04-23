@@ -49,6 +49,6 @@ public class ProductRepository : IProductRepository
 	public async Task<List<Product>> GetAll(Expression<Func<Product, bool>> predicate)
 	{
 		using var db = _contextFactory.CreateDbContext();
-		return await db.Products.Where(x => x.Id == 1).ToListAsync();
+		return await db.Products.Where(predicate).ToListAsync();
 	}
 }

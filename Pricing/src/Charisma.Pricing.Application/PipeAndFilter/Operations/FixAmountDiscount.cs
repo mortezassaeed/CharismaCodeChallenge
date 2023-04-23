@@ -15,8 +15,7 @@ internal class FixAmountDiscount : IOperation
 
 	public Price Apply(Price price)
 	{
-		var discount = _actualAmount - _amountOfDiscount;
-		price.Value -= discount;
+		price.Value -= _amountOfDiscount;
 		return price;
 	}
 }
