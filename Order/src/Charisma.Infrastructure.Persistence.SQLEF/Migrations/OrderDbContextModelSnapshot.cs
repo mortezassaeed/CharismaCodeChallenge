@@ -53,6 +53,10 @@ namespace Charisma.Infrastructure.Persistence.SQLEF.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("ProductCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Products", (string)null);
@@ -61,12 +65,14 @@ namespace Charisma.Infrastructure.Persistence.SQLEF.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Product 1"
+                            Name = "Product 1",
+                            ProductCode = "P_1"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Product 2"
+                            Name = "Product 2",
+                            ProductCode = "P_2"
                         });
                 });
 

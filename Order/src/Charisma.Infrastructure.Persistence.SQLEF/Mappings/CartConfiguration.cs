@@ -13,13 +13,7 @@ internal class CartConfiguration : IEntityTypeConfiguration<Cart>
 			.HasKey(m => m.Id);
 
 		builder.Property(m => m.Id)
-			.HasColumnName("Id")
-			//.ValueGeneratedNever()
-			//.HasConversion(
-			//	id => id.Value,
-			//	value => CartId.CreateWith(value)
-			//)
-			;
+			.HasColumnName("Id");
 
 		builder.OwnsMany(m => m.CartItems, b =>
 		{

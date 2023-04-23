@@ -12,7 +12,6 @@ public class Cart : AggregateRoot<Guid>
 	public ICollection<CartItem> CartItems { get; set; }
     public Cart(DateTime orderDateTime, int customerId)
 	{
-
 		if (orderDateTime.TimeOfDay <=
 			TimeOnly.Parse("8:00 am").ToTimeSpan() ||
 			orderDateTime.TimeOfDay >=

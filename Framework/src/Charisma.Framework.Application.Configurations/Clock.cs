@@ -9,9 +9,7 @@ namespace Charisma.Framework.Application.Configurations;
 internal class Clock : IClock
 {
 	public DateTime GetCurrentDateTime() {
-		string input = "9:00 am";
-		DateTime time = DateTime.Parse(input);
-		return time;
+		return DateTime.Now;	
 	}
 	
 }

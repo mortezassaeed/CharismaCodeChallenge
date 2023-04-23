@@ -1,11 +1,6 @@
 ﻿using Charisma.Framework.Application.Configurations;
 using Charisma.Order.Application.Contract.Commands;
 using Charisma.Order.Domain.CartAggregate;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Charisma.Order.Application.CommandHandler;
 public static class CartCommandMapper
@@ -19,7 +14,7 @@ public static class CartCommandMapper
 			return item;
 		}).ToList();
 
-		var cart = new Cart(clock.GetCurrentDateTime(),command.CustomerId);
+		var cart = new Cart(clock.GetCurrentDateTime(), command.CustomerId);
 		cart.CartItems = items;
 		return cart;
 	}

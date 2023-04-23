@@ -14,7 +14,7 @@ internal class ProductConfiguration : IEntityTypeConfiguration<Product>
 		builder.Property(m => m.Id).ValueGeneratedOnAdd();
 
 		builder.Property(m => m.Name).HasMaxLength(100);
-		builder.HasData(new Product("Product 1") { Id = 1 }, new Product("Product 2") { Id = 2 });
+		builder.HasData(new Product("Product 1") { Id = 1 , ProductCode = "P_1" }, new Product("Product 2") { Id = 2, ProductCode = "P_2" });
 	}
 }
 

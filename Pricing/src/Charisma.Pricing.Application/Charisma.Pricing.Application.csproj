@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Scrutor" Version="4.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\src\Charisma.Framework.Application.Configurations\Charisma.Framework.Application.Configurations.csproj" />
+    <ProjectReference Include="..\..\..\Framework\src\Charisma.Framework.Application\Charisma.Framework.Application.csproj" />
+    <ProjectReference Include="..\Charisma.Pricing.Application.Contracts\Charisma.Pricing.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Charisma.Pricing.Domain\Charisma.Pricing.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
